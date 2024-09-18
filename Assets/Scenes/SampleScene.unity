@@ -515,10 +515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f71705cc7b57249bb8348aded3e964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 5
-  horizontalJumpForce: 5
-  canMoveHorizontally: 1
-  rb: {fileID: 861184475}
+  Jumpforce: 5
+  Movespeed: 5
+  isGrounded: 0
 --- !u!1 &1283323863
 GameObject:
   m_ObjectHideFlags: 0

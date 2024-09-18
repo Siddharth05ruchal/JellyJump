@@ -1,53 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public float JumpForce;
-    public float horizontalJumpForce;
-    public bool canMoveHorizontally = true;
+    public float Jumpforce;
+    public float Movespeed;
+    private Rigidbody2D rb;
+
+    public bool isGrounded;
+
+    private void Start() {
+        rb = GetComponent<Rigidbody2D>(); 
     
-    public Rigidbody2D rb;
-    private bool isGrounded;
-    private float moveInput;
-
-    void Start()
-    {
-        rb.GetComponent<Rigidbody2D>();
     }
-
-    void Update()
+    private void Update()
     {
-        moveInput = Input.GetAxis("Horizontal");
+        if (isGrounded) {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                JumpLeft();
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
-            JumpDiagonally();
-        }
-
-    }
-    void FixedUpdate()
-    {
-        if (!isGrounded && canMoveHorizontally)
-        {
-            rb.velocity = new Vector2(moveInput * horizontalJumpForce, rb.velocity.y);
+            }
+            if (Input.GetKeyDown(KeyCode.D)) {
+                JumpRight();
+            }
         }
     }
 
-    public void JumpDiagonally() {
-        Vector2 JumpDirection = new Vector2(moveInput * horizontalJumpForce, JumpForce);
-        rb.velocity = JumpDirection;
+    public void JumpLeft() {
+        rb.velocity = new Vector2(-Movespeed, Jumpforce);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void JumpRight() {
+        rb.velocity = new Vector2(Movespeed, Jumpforce);
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform") { 
-            isGrounded= true;
+        if (collision.gameObject.CompareTag("Platform")) { 
+            isGrounded = true;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform") { 
+        if (collision.gameObject.CompareTag("Platform")) {
             isGrounded = false;
         }
     }
