@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (isGrounded) {
+        if (isGrounded) 
+        {
             if (Input.GetKeyDown(KeyCode.A))
             {
                 JumpLeft();
@@ -31,20 +32,16 @@ public class PlayerController : MonoBehaviour
 
     public void JumpLeft() {
         rb.velocity = new Vector2(-Movespeed, Jumpforce);
+        isGrounded = false;
     }
     public void JumpRight() {
         rb.velocity = new Vector2(Movespeed, Jumpforce);
+        isGrounded = false;
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Platform")) { 
             isGrounded = true;
-        }
-    }
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Platform")) {
-            isGrounded = false;
         }
     }
 }
