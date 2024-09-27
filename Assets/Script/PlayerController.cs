@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform")) { 
+        if (collision.gameObject.CompareTag("Platform")) 
             isGrounded = true;
-        }
+        
     }
 }
