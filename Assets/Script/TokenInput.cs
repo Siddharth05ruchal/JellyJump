@@ -7,7 +7,7 @@ public class TokenInput : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Add points to the score
-            ScoreManger.instance.AddPoints();
+            ScoreManger.instance.AddCoins();
 
             // Destroy the coin
             Destroy(gameObject);

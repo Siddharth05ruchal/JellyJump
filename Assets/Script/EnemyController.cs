@@ -35,9 +35,6 @@ public class EnemyController : MonoBehaviour
             if (transform.position.x <= startPositionX - moveDistance) { 
                 movingright=true;
             }
-
-
-        
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,6 +47,10 @@ public class EnemyController : MonoBehaviour
     {
         Destroy(Player);
         Debug.Log("Game Over");
+        if(ScoreManger.instance.highscore < ScoreManger.instance.score)
+        {
+            PlayerPrefs.SetInt("highscore", ScoreManger.instance.score);
+        }
         Invoke("RestartGame",2f);
     }
     public void RestartGame() {

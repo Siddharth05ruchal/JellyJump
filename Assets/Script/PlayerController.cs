@@ -1,42 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float Jumpforce;
     public float Movespeed;
     private Rigidbody2D rb;
+    public Button leftBtn;
+    public Button rightBtn;
+
 
     public bool isGrounded;
 
-    private void Start() {
-        rb = GetComponent<Rigidbody2D>(); 
-    
-    }
-    private void Update()
+    private void Start()
     {
-        if (isGrounded) 
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                JumpLeft();
+        rb = GetComponent<Rigidbody2D>();
 
-            }
-            if (Input.GetKeyDown(KeyCode.D)) {
-                JumpRight();
-            }
-        }
-    }
+        leftBtn.onClick.AddListener(() =>
+        {
+            JumpLeft();
+        });
+
+        rightBtn.onClick.AddListener(() =>
+        {
+            JumpRight(); 
+        });
+    }    
 
     public void JumpLeft() {
-        rb.velocity = new Vector2(-Movespeed, Jumpforce);
-        isGrounded = false;
+        if (isGrounded)
+        {
+            rb.velocity = new Vector2(-Movespeed, Jumpforce);
+            isGrounded = false;
+        }
+        
     }
     public void JumpRight() {
-        rb.velocity = new Vector2(Movespeed, Jumpforce);
-        isGrounded = false;
+        if (isGrounded) 
+        {
+            rb.velocity = new Vector2(Movespeed, Jumpforce);
+            isGrounded = false;
+        }
+       
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
