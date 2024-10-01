@@ -6,7 +6,10 @@ public class PlatformBehavior : MonoBehaviour
 {
     void Update()
     {
-        this.transform.Translate(Vector3.down * Time.deltaTime);        
+        if (GameManager.Instance.startGame)
+        {
+            this.transform.Translate(Vector3.down * Time.deltaTime);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

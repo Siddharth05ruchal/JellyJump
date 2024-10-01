@@ -19,19 +19,24 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        MoveLeftAndRight();
+        if (GameManager.Instance.startGame)
+        {
+            MoveLeftAndRight();
+        }
     }
     private void MoveLeftAndRight() {
         if (movingright)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(new Vector2(1,-1) * speed * Time.deltaTime);
+            
             if (transform.position.x >= startPositionX + moveDistance)
             {
                 movingright = false;
             }
         }
         else {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(new Vector2(-1, -1) * speed * Time.deltaTime);
+            
             if (transform.position.x <= startPositionX - moveDistance) { 
                 movingright=true;
             }
@@ -39,21 +44,9 @@ public class EnemyController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
-            DestroyPlayer(collision.gameObject);
-        }
-    }
-    public void DestroyPlayer(GameObject Player) 
-    {
-        Destroy(Player);
-        Debug.Log("Game Over");
-        if(ScoreManger.instance.highscore < ScoreManger.instance.score)
+        if (collision.gameObject.CompareTag("Player")) 
         {
-            PlayerPrefs.SetInt("highscore", ScoreManger.instance.score);
+            GameManager.Instance.RestartGame(collision.gameObject);
         }
-        Invoke("RestartGame",2f);
-    }
-    public void RestartGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
