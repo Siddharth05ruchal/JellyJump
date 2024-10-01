@@ -19,10 +19,13 @@ public class PlatformController : MonoBehaviour
 
     private void Update()
     {
-        if(Time.time > currentTime)
+        if (GameManager.Instance.startGame)
         {
-            spawner();
-            currentTime += timeBetweenSpawns; // currentTime = currentTime + timeBetweenSpawns
+            if (Time.timeSinceLevelLoad > currentTime)
+            {
+                spawner();
+                currentTime += timeBetweenSpawns; // currentTime = currentTime + timeBetweenSpawns
+            }
         }
     }
 

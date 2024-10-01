@@ -22,12 +22,18 @@ public class PlayerController : MonoBehaviour
 
         leftBtn.onClick.AddListener(() =>
         {
-            JumpLeft();
+            if (GameManager.Instance.startGame)
+            {
+                JumpLeft();
+            }
         });
 
         rightBtn.onClick.AddListener(() =>
         {
-            JumpRight(); 
+            if (GameManager.Instance.startGame)
+            {
+                JumpRight();
+            }
         });
     }
 
