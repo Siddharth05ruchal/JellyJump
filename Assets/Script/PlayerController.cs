@@ -19,9 +19,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private BoxCollider2D groundCol;
 
+    private Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         leftBtn.onClick.AddListener(() =>
         {
@@ -61,6 +64,7 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = 1f;
             rb.velocity = new Vector2(-Movespeed, Jumpforce);
             isGrounded = false;
+            animator.SetBool("isJumping", true);
         }        
     }
     public void JumpRight() 
@@ -70,8 +74,9 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = 1f;
             rb.velocity = new Vector2(Movespeed, Jumpforce);
             isGrounded = false;
+            animator.SetBool("isJumping", true);
         }
-       
+
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -83,6 +88,7 @@ public class PlayerController : MonoBehaviour
             }
             isGrounded = true;
             rb.gravityScale = fallMul;
+            animator.SetBool("isJumping", false);
         }
     }
 

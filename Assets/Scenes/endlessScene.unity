@@ -1057,6 +1057,7 @@ GameObject:
   - component: {fileID: 861184477}
   - component: {fileID: 861184475}
   - component: {fileID: 861184476}
+  - component: {fileID: 861184478}
   m_Layer: 0
   m_Name: Jelly
   m_TagString: Player
@@ -1230,6 +1231,27 @@ PolygonCollider2D:
       - {x: 0.8883799, y: -0.062362432}
       - {x: 0.4433749, y: 0.557911}
   m_UseDelaunayMesh: 0
+--- !u!95 &861184478
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861184471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b650b767e40cd44192767d541b7f351, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &868178738
 PrefabInstance:
   m_ObjectHideFlags: 0
