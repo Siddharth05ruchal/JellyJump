@@ -159,8 +159,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+      - {x: -0.45356262, y: -0.41507977}
+      - {x: 0.0115507245, y: -0.2964568}
+      - {x: 0.47420144, y: -0.40991992}
   m_UseDelaunayMesh: 0
 --- !u!114 &7667903932368091805
 MonoBehaviour:
@@ -174,6 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2623325cae8c1514494549374f654d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  moveDistance: 2
-  movingright: 1
+  speed: 3.5

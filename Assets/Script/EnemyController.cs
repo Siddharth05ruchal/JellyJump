@@ -6,47 +6,27 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 
 {
-    public float speed;
-    public float moveDistance;
-    public bool movingright = true;
-
-    private float startPositionX;
-
-    private void Start()
-    {
-        startPositionX = transform.position.x;
-    }
+    public float speed = 3.5f; 
 
     private void Update()
     {
         if (GameManager.Instance.startGame)
         {
-            MoveLeftAndRight();
+            MoveDown(); 
         }
     }
-    private void MoveLeftAndRight() {
-        if (movingright)
-        {
-            transform.Translate(new Vector2(1,-1) * speed * Time.deltaTime);
-            
-            if (transform.position.x >= startPositionX + moveDistance)
-            {
-                movingright = false;
-            }
-        }
-        else {
-            transform.Translate(new Vector2(-1, -1) * speed * Time.deltaTime);
-            
-            if (transform.position.x <= startPositionX - moveDistance) { 
-                movingright=true;
-            }
-        }
+
+    private void MoveDown()
+    {
+        
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.RestartGame(collision.gameObject);
+            GameManager.Instance.RestartGame(collision.gameObject); 
         }
     }
 }

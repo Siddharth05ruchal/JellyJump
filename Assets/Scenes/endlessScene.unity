@@ -506,7 +506,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1689528456}
   - {fileID: 1339491156}
-  timeBetweenSpawns: 2
+  timeBetweenSpawns: 1.8
 --- !u!1 &387626428
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +794,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -824,14 +824,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 460247336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bcb4a0b1bcac043b180804bb000288, type: 3}
+  m_Script: {fileID: 11500000, guid: b2dfa04c786282f4a896462fec66a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformPrefab: {fileID: 2029219089939696303, guid: 443e7d6468ac7c341b02b4855c1c8cc9, type: 3}
+  enemyPrefab: {fileID: 2029219089939696303, guid: 443e7d6468ac7c341b02b4855c1c8cc9, type: 3}
   spawnPoints:
   - {fileID: 1138881708}
   - {fileID: 1904667047}
-  timeBetweenSpawns: 4
+  timeBetweenSpawns: 2.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f71705cc7b57249bb8348aded3e964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jumpforce: 7
-  Movespeed: 3.5
+  Jumpforce: 15
+  Movespeed: 5
   leftBtn: {fileID: 1075711766}
   rightBtn: {fileID: 776853475}
   fallMul: 3.5
@@ -1263,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 3660330712125810358, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_Name
       value: Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291792460323676784, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
+      propertyPath: platformMoveSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5653147866298172166, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1752,7 +1756,7 @@ Transform:
   m_GameObject: {fileID: 1138881707}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72, y: -0.55999994, z: 0}
+  m_LocalPosition: {x: 0.85, y: -0.55999994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1804,6 +1808,10 @@ PrefabInstance:
     - target: {fileID: 3660330712125810358, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_Name
       value: Platform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291792460323676784, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
+      propertyPath: platformMoveSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5653147866298172166, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1866,6 +1874,10 @@ PrefabInstance:
     - target: {fileID: 3660330712125810358, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291792460323676784, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
+      propertyPath: platformMoveSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5653147866298172166, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2803,7 +2815,7 @@ Transform:
   m_GameObject: {fileID: 1904667045}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.67, y: -0.60999966, z: 0}
+  m_LocalPosition: {x: -0.79, y: -0.60999966, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2820,6 +2832,10 @@ PrefabInstance:
     - target: {fileID: 3660330712125810358, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_Name
       value: Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291792460323676784, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
+      propertyPath: platformMoveSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5653147866298172166, guid: eb6400032c380cc418ff29e77f86d9e2, type: 3}
       propertyPath: m_LocalPosition.x

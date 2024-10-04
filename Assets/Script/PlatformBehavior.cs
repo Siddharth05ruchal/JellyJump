@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlatformBehavior : MonoBehaviour
 {
+    public float platformMoveSpeed = 2.0f;
     void Update()
     {
         if (GameManager.Instance.startGame)
         {
-            this.transform.Translate(Vector3.down * Time.deltaTime);
+            this.transform.Translate(Vector3.down * Time.deltaTime * platformMoveSpeed);
         }
     }
 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformSpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
-    public GameObject platformPrefab;
+    public GameObject enemyPrefab;
     public Transform[] spawnPoints;
     public float timeBetweenSpawns = 0.5f;
 
@@ -29,15 +29,13 @@ public class PlatformSpawner : MonoBehaviour
         }
     }
 
-    public void spawner() 
+    public void spawner()
     {
         if (index > 1)
         {
             index = 0;
         }
-        Instantiate(platformPrefab, spawnPoints[index].position, Quaternion.identity);
+        Instantiate(enemyPrefab, spawnPoints[index].position, Quaternion.identity);
         index++;
-
-        
     }
 }

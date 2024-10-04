@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         if(rb.velocity.y < 0f)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * fallMul * Time.deltaTime;
+            //rb.velocity += Vector2.up * Physics2D.gravity.y * fallMul * Time.deltaTime;
         }
 
         if (firstLanding)
@@ -61,8 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
-            rb.gravityScale = 1f;
-            rb.velocity = new Vector2(-Movespeed, Jumpforce);
+            rb.gravityScale = fallMul;
+            rb.velocity += new Vector2(-Movespeed, Jumpforce);
             isGrounded = false;
             animator.SetBool("isJumping", true);
         }        
@@ -71,8 +71,8 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded) 
         {
-            rb.gravityScale = 1f;
-            rb.velocity = new Vector2(Movespeed, Jumpforce);
+            rb.gravityScale = fallMul;
+            rb.velocity += new Vector2(Movespeed, Jumpforce);
             isGrounded = false;
             animator.SetBool("isJumping", true);
         }
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
                 firstLanding = true;
             }
             isGrounded = true;
-            rb.gravityScale = fallMul;
+            rb.gravityScale = 1f;
             animator.SetBool("isJumping", false);
         }
     }
