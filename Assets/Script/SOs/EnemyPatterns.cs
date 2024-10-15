@@ -9,6 +9,7 @@ public class EnemyPatterns : ScriptableObject
     public GameObject enemyPrefab;
     public Vector2 spawnPoint;
     public float patternDuration;
+    public int scoreCutoff;
 }
 
 public enum EnemyPattern

@@ -16,3 +16,4 @@ MonoBehaviour:
   enemyPrefab: {fileID: 0}
   spawnPoint: {x: 0, y: 7}
   patternDuration: 4
+  scoreCutoff: 600

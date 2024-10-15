@@ -2833,14 +2833,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui_manger: {fileID: 1704129798}
   enemies:
+  - {fileID: 11400000, guid: 4ba0ccb988864954faae0eed0c71f384, type: 2}
   - {fileID: 11400000, guid: 7354667c04ce0e14fa923c2dd31652d8, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 083fb43566bb52145ba2d432e616b51f, type: 2}
+  - {fileID: 11400000, guid: 31dfb7c9cc9d8214b9576a5cca9fb28d, type: 2}
+  - {fileID: 11400000, guid: 71606236bf1c9214097344576d75b18c, type: 2}
+  - {fileID: 11400000, guid: 3b2cdebe169ca064b82a0f2534b51d37, type: 2}
+  - {fileID: 11400000, guid: f8cefaae018c4734c999fd5d9bc6012c, type: 2}
+  - {fileID: 11400000, guid: 7168dac40b6d20e49a79cc96a51f584b, type: 2}
+  - {fileID: 11400000, guid: c1c5d3bd0d7bc1249a0d6a74cd86fb4f, type: 2}
 --- !u!1 &2112803548
 GameObject:
   m_ObjectHideFlags: 0
